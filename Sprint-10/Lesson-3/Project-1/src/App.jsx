@@ -18,8 +18,8 @@ function App() {
     dispatch(nextFilm());
   }
 
-  function listemeEkle(index) {
-    dispatch(addFav(index));
+  function listemeEkle() {
+    dispatch(addFav());
   }
 
   return (
@@ -66,7 +66,7 @@ function App() {
             {movies.length > 0 && (
               <button
                 className="select-none px-4 py-2 bg-blue-700 hover:bg-blue-600 text-white"
-                onClick={() => listemeEkle(sira)}
+                onClick={listemeEkle}
               >
                 Listeme ekle
               </button>

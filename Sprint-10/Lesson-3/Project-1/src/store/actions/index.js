@@ -15,10 +15,9 @@ export const nextFilm = () => {
   };
 };
 
-export const addFav = (sira) => {
+export const addFav = () => {
   return {
     type: ADD_FAV,
-    payload: sira,
   };
 };
 

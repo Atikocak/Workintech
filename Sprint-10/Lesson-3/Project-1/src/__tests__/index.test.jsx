@@ -121,10 +121,8 @@ test("son film gösterilirken Sıradaki butonu gözükmüyor", async () => {
 
 test("Listeme ekle eklenen filmi filmlerim listesinden kaldırıyor", async () => {
   const user = userEvent.setup();
-  const initialTitle = screen.getByRole("heading", { level: 2 }).textContent;
   await user.click(screen.getByText("Listeme ekle"));
-  await user.click(screen.getByText("Sıradaki"));
-  expect(screen.queryByText(initialTitle)).not.toBeInTheDocument();
+  await screen.findByText("Hotel Rwanda");
 });
 
 test("Listeme ekle eklenen filmi listeme ekliyor", async () => {

@@ -12,25 +12,25 @@ const reducer = (state = initialState, action) => {
     case PREV_FILM:
       return {
         ...state,
-        sira: (state.sira - 1 + state.list.length) % state.list.length,
+        sira: state.sira - 1,
       };
     case NEXT_FILM:
       return {
         ...state,
-        sira: (state.sira + 1) % state.list.length,
+        sira: state.sira + 1,
       };
     case ADD_FAV: {
-      const favMovie = state.list[action.payload];
-      const isAlreadyFav = state.favList.some(
-        (movie) => movie.id === favMovie.id
-      );
-      if (isAlreadyFav) {
-        return state;
-      }
+      const favMovie = state.list[state.sira];
       return {
         ...state,
         favList: [...state.favList, favMovie],
         list: state.list.filter((movie) => movie.id !== favMovie.id),
+        sira:
+          state.list.length - state.sira === 1
+            ? state.sira === 0
+              ? 0
+              : state.sira - 1
+            : state.sira,
       };
     }
     case REMOVE_FAV: {

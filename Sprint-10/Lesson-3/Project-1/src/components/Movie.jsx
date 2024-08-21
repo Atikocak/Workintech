@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 
 export default function Movie({ sira }) {
   const movies = useSelector((state) => state.list);
-  const movie = useSelector((state) => state.list[sira]);
+  const movie = movies[sira];
 
   if (movies.length === 0 || sira < 0 || sira >= movies.length) {
     return <div>Eklenecek yeni film bulunamadı...</div>;
