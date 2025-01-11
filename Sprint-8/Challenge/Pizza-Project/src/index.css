@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  #order-amount-input::-webkit-inner-spin-button,
+  #order-amount-input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  #order-amount-input {
+    -moz-appearance: textfield;
+  }
+}

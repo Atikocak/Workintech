@@ -1,7 +1,7 @@
 package com.workintech.pool;
 
-public class Cuboid extends Rectangle{
-    private final double height;
+public class Cuboid extends Rectangle {
+    private double height;
 
     public Cuboid(double width, double length, double height) {
         super(width, length);
